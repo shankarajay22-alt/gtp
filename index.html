@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Chinese Yuan Rate</title>
+    <link rel="preconnect" href="https://api.frankfurter.app" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <section class="hero">
+        <img src="assets/yuan-dashboard.png" alt="Chinese yuan exchange rate desk" class="hero-image" />
+        <div class="hero-shade"></div>
+
+        <div class="hero-content">
+          <div class="topbar">
+            <span class="brand">Yuan Rate</span>
+            <span class="status" id="status">Loading live rate</span>
+          </div>
+
+          <div class="rate-layout">
+            <section class="rate-panel" aria-labelledby="rate-title">
+              <p class="eyebrow">Chinese currency exchange</p>
+              <h1 id="rate-title">CNY to INR</h1>
+
+              <div class="main-rate">
+                <span id="baseAmount">1 CNY</span>
+                <strong id="mainRate">--</strong>
+                <span>Indian rupees</span>
+              </div>
+
+              <div class="meta-row">
+                <span id="rateDate">Latest available market rate</span>
+                <a href="https://www.frankfurter.app/" target="_blank" rel="noreferrer">Data source</a>
+              </div>
+            </section>
+
+            <section class="converter" aria-label="Currency converter">
+              <div class="field">
+                <label for="amount">Amount</label>
+                <input id="amount" type="number" min="0" step="0.01" value="100" />
+              </div>
+
+              <div class="currency-row">
+                <label for="fromCurrency">From</label>
+                <select id="fromCurrency">
+                  <option value="USD">USD - US dollar</option>
+                  <option value="CNY" selected>CNY - Chinese yuan</option>
+                  <option value="INR">INR - Indian rupee</option>
+                  <option value="EUR">EUR - Euro</option>
+                  <option value="GBP">GBP - British pound</option>
+                  <option value="JPY">JPY - Japanese yen</option>
+                </select>
+              </div>
+
+              <button id="swapButton" class="icon-button" type="button" aria-label="Swap currencies" title="Swap currencies">
+                ⇅
+              </button>
+
+              <div class="currency-row">
+                <label for="toCurrency">To</label>
+                <select id="toCurrency">
+                  <option value="CNY">CNY - Chinese yuan</option>
+                  <option value="USD">USD - US dollar</option>
+                  <option value="INR" selected>INR - Indian rupee</option>
+                  <option value="EUR">EUR - Euro</option>
+                  <option value="GBP">GBP - British pound</option>
+                  <option value="JPY">JPY - Japanese yen</option>
+                </select>
+              </div>
+
+              <output id="convertedAmount" class="converted">--</output>
+            </section>
+          </div>
+        </div>
+      </section>
+
+      <section class="rates-strip" aria-label="Popular Chinese yuan rates">
+        <article>
+          <span>CNY to INR</span>
+          <strong id="cnyInr">--</strong>
+        </article>
+        <article>
+          <span>INR to CNY</span>
+          <strong id="inrCny">--</strong>
+        </article>
+        <article>
+          <span>USD to INR</span>
+          <strong id="usdInr">--</strong>
+        </article>
+        <article>
+          <span>CNY to USD</span>
+          <strong id="cnyUsd">--</strong>
+        </article>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
